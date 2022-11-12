@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme-lumen.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            background-color: #214fb3;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #navbar {
+            overflow: visible;
+        }
+
+        #navbar button {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 60px;
+            width: inherit;
+        }
+
+        .sticky + .content {
+            padding-top: 20px;
+        }
+
+
+        .with-border {
+            border-width: 5px;
+            border-color: #000000;
+            border-style: dashed;
+        }
+
+        .nav-item {
+            display: block;
+            width: inherit;
+            border-radius: 0px;
+            margin-right: 40%;
+            box-shadow: #1a1e21 10px 10px 5px;
+        }
+
+        .main-view {
+            background-color: #2c3034;
+        }
+
+        hr {
+            height: 10px;
+            background-color: #1ac398;
+            border-style: ridge;
+        }
+
+        .greeting {
+            background-color: #0c63e4;
+            border-color: #000000;
+            color: #f0f0f0;
+            border-bottom: #2d96e5;
+            border-bottom-width: 4px;
+            box-shadow: #2c3034 0px 10px 10px;
+            border-style: groove;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<div class="header">
+    <hr/>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 text-center">
+            <div class="text-center" style="height: 100%; background-color: #ffe558; margin-top: 60px;">
+                <nav id="navbar">
+                    <div class="col-12 text-center" style="margin-top: 60px;">
+                        <button type="button" class="btn btn-primary nav-item">Option 1</button>
+                        <button type="button" class="btn btn-primary nav-item">Option 2</button>
+                        <button type="button" class="btn btn-primary nav-item">Option 3</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-9">
+            <div style="margin-top: 60px;">
+                <h1 class="greeting">Welcome</h1>
+            </div>
+            <div class="with-border main-view" style="height: 3000px;">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        const navbar = document.getElementById("navbar");
+        const sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.scrollY >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
