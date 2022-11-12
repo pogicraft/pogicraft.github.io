@@ -1,0 +1,126 @@
+// ----------------------
+//  Change me!
+// ----------------------
+
+$animation-in: cubic-bezier(1,0,0,2)
+//$animation-in: linear // To compare with “lazy” animation
+$animation-out: ease-in
+$app-color: #58d39f
+//$app-color: #1f90f6 // Alternate
+//$app-color: #eb4751 // Alternate 2
+$timing-in: 600ms
+$timing-out: 300ms
+
+// ----------------------
+//  Look at me!
+// ----------------------
+
+// ----- 1/4: Page Structure ----- //
+
+body
+  background-color: scale-color($app-color, $lightness: -15%, $saturation: -40%)
+  font: 150%/1 "Futura", sans-serif
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+
+nav
+  background-color: $app-color
+  box-shadow: 0 2px darken($app-color, 20%)
+  display: block
+  margin-top: 0
+  margin-left: auto
+  margin-right: auto
+  width: 100%
+  a
+    color: white
+    display: block
+    line-height: 2.5
+    text-shadow: 0 -1px rgba(darken($app-color, 30%), 0.4)
+    transition: all 150ms ease-out
+  li, ul
+    margin: 0
+    padding: 0
+  li
+    border-left: 1px dashed darken($app-color, 15%)
+    display: table-cell
+    list-style-type: none
+    text-align: center
+    transition: all 150ms ease-out
+    width: 25%
+    &:first-of-type
+      border-left: none
+    &:hover
+      background-color: lighten($app-color, 8%)
+      a
+        -webkit-transform: translateY(-0.125em)
+        transform: translateY(-0.125em)
+  ul
+    display: table
+    width: 100%
+
+// ----- 2/4: Dropdown Component ----- //
+
+.dropdown
+  display: block
+  height: 0
+  margin: 0
+  padding: 0
+  position: absolute
+  right: 0
+  top: 100%
+  min-width: 100%
+
+// ----- 3/4: Dropdown Scaffolding ----- //
+
+.dropdown-item
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  background-color: darken($app-color, 15%)
+  border-top: 1px solid darken($app-color, 15%)
+  border-left: none
+  display: block
+  transform: rotateX(-90deg)
+  -webkit-transform-origin: 50% 0
+  transform-origin: 50% 0
+  -webkit-transform: rotateX(-90deg)
+  transition: all $timing-out #{$animation-out} ($timing-out * 3)
+  width: 100%
+  &:nth-of-type(2)
+    transition-delay: ($timing-out * 2)
+  &:nth-of-type(3)
+    transition-delay: $timing-out
+  &:nth-of-type(4)
+    transition-delay: 0ms
+  &:last-of-type
+    box-shadow: 0 2px darken($app-color, 20%)
+  &:hover a
+    background-color: rgba(white, 0.2)
+    -webkit-transform: none
+    transform: none
+
+// ----- 4/4: Dropdown States ----- //
+
+// Note: dropdown container CANNOT be on a `display: table-cell` item (https://bugzilla.mozilla.org/show_bug.cgi?id=35168)
+
+.has-dropdown
+  position: relative
+  &:hover
+    .dropdown
+      height: auto
+    .dropdown-item
+      background-color: $app-color
+      -webkit-transform: perspective(350px) rotateX(0deg)
+      transform: perspective(350px) rotateX(0deg)
+      transition: all $timing-in #{$animation-in}
+      a
+        -webkit-transform: none
+        transform: none
+      &:nth-of-type(2)
+        transition-delay: $timing-in
+      &:nth-of-type(3)
+        transition-delay: ($timing-in * 2)
+      &:nth-of-type(4)
+        transition-delay: ($timing-in * 3)
