@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme-lumen.css">
+    <link rel="stylesheet" href="node_modules/bootstrap.ui/dist/css/bootstrap-ui.min.css"/>
+    <script src="node_modules/bootstrap.ui/dist/js/bootstrap-ui.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,500&family=Raleway&family=Roboto&family=Titillium+Web&display=swap"
+          rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -12,6 +25,12 @@
             padding: 0;
             font-size: 1.25rem;
             font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+            font-family: 'Alkalami', serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         .header {
@@ -129,7 +148,11 @@
             font-family: "Copperplate Gothic Bold";
             font-weight: 700;
             z-index: 200;
+            background-color: #69b6d4;
+            border: #1d1d1d solid 2px;
+            user-select: none;
         }
+
         .btn {
             transition: transform 1s ease-in-out;
         }
@@ -139,10 +162,14 @@
         }
 
         .extra-link:hover {
-            scale: 140%;
+            scale: 120%;
             transform: translateX(-30px);
             border-width: 2px;
             background-color: #ffe558;
+        }
+
+        .accordion-collapse {
+            transition: .25s linear;
         }
     </style>
 
@@ -154,10 +181,10 @@
 </head>
 
 <body class="container-fluid">
-<div class="header">
+<div class="but-actually-the-entire-main-body header">
     <div class="row">
         <hr/>
-        <div class="col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;">
+        <div class="navigation-sidebar col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;">
             <div class="text-center" style="height: 100%;">
                 <nav id="navbar">
                     <div class="col-12 text-center" style="margin-top: 60px;">
@@ -174,7 +201,7 @@
                 </nav>
             </div>
         </div>
-        <div class="col-lg-10 col-md-8" id="accordion-section">
+        <div class="col-lg-10 col-md-8 container" id="accordion-section">
             <div>
                 <h1 class="greeting" style="margin: 0; padding: 0;">Welcome</h1>
             </div>
@@ -188,7 +215,6 @@
                     amet. Nam in venenatis orci. Aenean vel eleifend lorem. Quisque a sem id ligula lobortis ullamcorper
                     eget et velit. Donec elementum vitae dui nec mattis. Donec ipsum est, tempus vel rutrum elementum,
                     fermentum sed est. Integer libero urna, rutrum at tempor viverra, scelerisque non diam.</p>
-
                 <p style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
                     Vivamus accumsan, ex ac pretium dignissim, mauris enim aliquet justo, id pulvinar mauris ante id
                     felis. Donec eget malesuada orci, et consectetur sapien. Pellentesque sem elit, dignissim rhoncus
@@ -206,70 +232,60 @@
                     <button class="language-choice btn btn-outline-light" href="#">HTML Javascript</button>
                     <button class="language-choice btn btn-outline-light" href="#">Backend DB</button>
                 </div>
-
                 <div id="collapsered" class="accordion" style="padding: 10%;">
-
-                    <div class="accordion-item">
-                        <div class="section-3"></div>
-                        <h4 id="b-3" class="bg-white header section-title" data-bs-toggle="collapse" data-bs-target="#resume-section" aria-controls="resume-section">Resume</h4>
-                        <div id="resume-section" class="accordion-collapse collapse accordion-body" aria-expanded="true" aria-labelledby="accordion-section" data-bs-parent="#collapsered"></div>
+                    <div class="accordion-item section-3"><h4 id="b-3" class="header section-title"
+                                                              data-bs-toggle="collapse" data-bs-target="#resume-section"
+                                                              aria-controls="resume-section">Resume</h4>
+                        <div id="resume-section" class="accordion-collapse collapse accordion-body" aria-expanded="true"
+                             aria-labelledby="accordion-section" data-bs-parent="#collapsered"></div>
                     </div>
-
-                    <div class="accordion-item">
-                        <h4 id="b-4" class="bg-white header section-title" data-bs-toggle="collapse" data-bs-target="#s-4" aria-controls="s-4" aria-expanded="true">Skills</h4>
-                        <div id="s-4" class="accordion-collapse collapse" aria-labelledby="accordion-section" data-bs-parent="#collapsered">
-                            <p style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec enim lorem. Cras non
-                                enim at velit sodales commodo a egestas dui. Curabitur quis faucibus neque. Aliquam in
-                                interdum est. Phasellus ullamcorper eu lectus quis venenatis. Nunc quis finibus tellus.
-                                Morbi et hendrerit libero. Ut tempus, massa sit amet dignissim luctus, nisi orci luctus
-                                enim, vehicula dictum neque massa vel diam. Integer rutrum sollicitudin leo nec cursus.
-                                Morbi ipsum lorem, mattis ut nibh vel, scelerisque viverra massa. Duis sed venenatis
-                                diam. Suspendisse vestibulum nec leo at aliquet.</p>
+                    <div class="accordion-item section-4"><h4 id="b-4" class="header section-title"
+                                                              data-bs-toggle="collapse" data-bs-target="#s-4"
+                                                              aria-controls="s-4" aria-expanded="true">Skills</h4>
+                        <div id="s-4" class="accordion-collapse collapse" aria-labelledby="accordion-section"
+                             data-bs-parent="#collapsered"><p
+                                style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec enim lorem. Cras non enim
+                            at velit sodales commodo a egestas dui. Curabitur quis faucibus neque. Aliquam in interdum
+                            est. Phasellus ullamcorper eu lectus quis venenatis. Nunc quis finibus tellus. Morbi et
+                            hendrerit libero. Ut tempus, massa sit amet dignissim luctus, nisi orci luctus enim,
+                            vehicula dictum neque massa vel diam. Integer rutrum sollicitudin leo nec cursus. Morbi
+                            ipsum lorem, mattis ut nibh vel, scelerisque viverra massa. Duis sed venenatis diam.
+                            Suspendisse vestibulum nec leo at aliquet.</p></div>
                     </div>
-
-                    <div class="accordion-item">
-                        <div class="section-5 accordion-item"></div>
-                        <h4 class="bg-white header section-title accordion-header" data-bs-toggle="collapse" data-bs-target="#s-5" aria-expanded="true" aria-labelledby="accordion-section">Footie</h4>
-                        <div id="s-5" class="accordion-collapse collapse" data-bs-parent="#collapsered">
-                            <p style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec enim lorem. Cras non
-                                enim at velit sodales commodo a egestas dui. Curabitur quis faucibus neque. Aliquam in
-                                interdum est. Phasellus ullamcorper eu lectus quis venenatis. Nunc quis finibus tellus.
-                                Morbi et hendrerit libero. Ut tempus, massa sit amet dignissim luctus, nisi orci luctus
-                                enim, vehicula dictum neque massa vel diam. Integer rutrum sollicitudin leo nec cursus.
-                                Morbi ipsum lorem, mattis ut nibh vel, scelerisque viverra massa. Duis sed venenatis
-                                diam. Suspendisse vestibulum nec leo at aliquet.</p>
-                        </div>
+                    <div class="accordion-item section-5"><h4 id="b-5" class="header section-title"
+                                                              data-bs-toggle="collapse" data-bs-target="#s-5"
+                                                              aria-controls="s-5" aria-expanded="true">Footie</h4>
+                        <div id="s-5" class="accordion-collapse collapse" aria-labelledby="accordion-section"
+                             data-bs-parent="#collapsered"><p
+                                style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec enim lorem. Cras non enim
+                            at velit sodales commodo a egestas dui. Curabitur quis faucibus neque. Aliquam in interdum
+                            est. Phasellus ullamcorper eu lectus quis venenatis. Nunc quis finibus tellus. Morbi et
+                            hendrerit libero. Ut tempus, massa sit amet dignissim luctus, nisi orci luctus enim,
+                            vehicula dictum neque massa vel diam. Integer rutrum sollicitudin leo nec cursus. Morbi
+                            ipsum lorem, mattis ut nibh vel, scelerisque viverra massa. Duis sed venenatis diam.
+                            Suspendisse vestibulum nec leo at aliquet.</p></div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <div class="accordion" id="accordionExample">
+        <script> document.onscroll = function () {
+                myFunction()
+            };
 
+            const navbar = document.getElementById("navbar");
+            const sticky = navbar.offsetTop;
 
-
-        </div>
-
-    </div>
-
-    <script>
-        window.onscroll = function () {
-            myFunction()
-        };
-
-        const navbar = document.getElementById("navbar");
-        const sticky = navbar.offsetTop;
-
-        function myFunction() {
-            if (window.scrollY >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
+            function myFunction() {
+                if (window.scrollY >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
             }
-        }
-    </script>
+        </script>
+    </div>
 </div>
 </body>
 </html>
