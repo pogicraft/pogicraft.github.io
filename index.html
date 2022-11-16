@@ -4,20 +4,21 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme-lumen.css">
-    <link rel="stylesheet" href="node_modules/bootstrap.ui/dist/css/bootstrap-ui.min.css"/>
     <script src="node_modules/bootstrap.ui/dist/js/bootstrap-ui.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme-lumen.css">
+    <link rel="stylesheet" href="node_modules/bootstrap.ui/dist/css/bootstrap-ui.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,500&family=Raleway&family=Roboto&family=Titillium+Web&display=swap"
           rel="stylesheet">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -31,6 +32,14 @@
             font-family: 'Open Sans', sans-serif;
             font-family: 'Raleway', sans-serif;
             font-family: 'Roboto', sans-serif;
+        }
+
+        h4 {
+            font-size: 3rem;
+        }
+
+        h6 {
+            font-size: 2rem;
         }
 
         .header {
@@ -144,7 +153,6 @@
         }
 
         .section-title {
-            font-size: 3rem;
             font-family: "Copperplate Gothic Bold";
             font-weight: 700;
             z-index: 200;
@@ -162,8 +170,8 @@
         }
 
         .extra-link:hover {
-            scale: 120%;
-            transform: translateX(-30px);
+            scale: 140%;
+            transform: translateX(20px);
             border-width: 2px;
             background-color: #ffe558;
         }
@@ -178,44 +186,55 @@
             $("#resume-section").load("resume.html");
         });
     </script>
+
 </head>
 
 <body class="container-fluid">
 <div class="but-actually-the-entire-main-body header">
     <div class="row">
         <hr/>
-        <div class="navigation-sidebar col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;">
-            <div class="text-center" style="height: 100%;">
-                <nav id="navbar">
-                    <div class="col-12 text-center" style="margin-top: 60px;">
-                        <button type="button" class="btn btn-primary nav-item">Option 1</button>
-                        <button type="button" class="btn btn-primary nav-item">Option 2</button>
-                        <button type="button" class="btn btn-primary nav-item">Option 3</button>
-                        <button type="button" class="btn btn-primary nav-item">Option 4</button>
-                        <button type="button" class="btn btn-primary nav-item">Option 5</button>
-                        <p class="invisible" style="padding: 10%;">someone's text here</p>
-                        <a class="card-link d-block extra-link" style="padding: 5%;" href="#">Twitter</a>
-                        <a class="card-link d-block extra-link" style="padding: 5%;" href="#">Github</a>
-                        <a class="card-link d-block extra-link" style="padding: 5%;" href="#">LinkedIn</a>
-                    </div>
-                </nav>
-            </div>
+        <div class="text-center navigation-sidebar col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;">
+            <nav id="navbar">
+                <div class="col-12 text-center" style="margin-top: 60px;">
+                    <button type="button" class="btn btn-primary nav-item">Option 1</button>
+                    <button type="button" class="btn btn-primary nav-item">Option 2</button>
+                    <button type="button" class="btn btn-primary nav-item">Option 3</button>
+                    <button type="button" class="btn btn-primary nav-item">Option 4</button>
+                    <button type="button" class="btn btn-primary nav-item">Option 5</button>
+                    <p class="invisible" style="padding: 10%;">someone's text here</p>
+                    <a class="card-link d-block extra-link" style="padding: 5%;" href="#">Twitter</a>
+                    <a class="card-link d-block extra-link" style="padding: 5%;" href="#">Github</a>
+                    <a class="card-link d-block extra-link" style="padding: 5%;" href="#">LinkedIn</a>
+                </div>
+            </nav>
         </div>
         <div class="col-lg-10 col-md-8 container" id="accordion-section">
-            <div>
+            <div data-aos="fade-down">
                 <h1 class="greeting" style="margin: 0; padding: 0;">Welcome</h1>
             </div>
             <div class="with-border main-view" style="padding: 0 !important; margin: 0 !important;">
                 <div class="section-1"></div>
-                <h4 class="bg-white header section-title">Filler</h4>
-                <p style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
+                <div class="row" style="padding-left: 10%; background-color: #2c3034;">
+                    <div class="section-title name-heading header col-5 bg-white" style="margin-top: auto; margin-bottom: auto;">
+                        <h6 data-aos="fade-left" style="padding-right: 200px;">Greetings! My name is</h6>
+                        <h4 data-aos="fade-right" style="font-family: 'Raleway', sans-serif; font-weight: 900;">Alexander Wayland-James</h4>
+                    </div>
+                    <div class="col-4" style="margin: 0; padding: 0;">
+                        <img src="resources/profile.png" style="max-height: 400px;">
+                    </div>
+
+                </div>
+                <h6 class="invisible">some more random text here</h6>
+                <div data-aos="slide-left" data-aos-delay="25" data-aos-easing="ease-in"><p
+                        style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec felis hendrerit orci porta
                     fringilla. Fusce tincidunt magna eu diam consectetur elementum et id velit. Suspendisse congue augue
                     elit, ac laoreet orci mattis non. Nullam rutrum sollicitudin neque, vel placerat erat lacinia sit
                     amet. Nam in venenatis orci. Aenean vel eleifend lorem. Quisque a sem id ligula lobortis ullamcorper
                     eget et velit. Donec elementum vitae dui nec mattis. Donec ipsum est, tempus vel rutrum elementum,
-                    fermentum sed est. Integer libero urna, rutrum at tempor viverra, scelerisque non diam.</p>
-                <p style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
+                    fermentum sed est. Integer libero urna, rutrum at tempor viverra, scelerisque non diam.</p></div>
+                <div data-aos="slide-left" data-aos-offset="300" data-aos-easing="ease-in-sin"><p
+                        style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
                     Vivamus accumsan, ex ac pretium dignissim, mauris enim aliquet justo, id pulvinar mauris ante id
                     felis. Donec eget malesuada orci, et consectetur sapien. Pellentesque sem elit, dignissim rhoncus
                     condimentum quis, vestibulum in felis. Suspendisse vel nulla eget eros laoreet sodales. Vivamus non
@@ -225,7 +244,7 @@
                     sit amet diam aliquam, ut placerat leo laoreet. Aliquam erat volutpat. Aliquam interdum viverra
                     justo vel eleifend. Quisque sed sem interdum, pulvinar libero id, fermentum felis. Morbi vitae
                     euismod massa. Sed volutpat ullamcorper turpis vitae semper. Proin posuere sapien et varius
-                    finibus.</p>
+                    finibus.</p></div>
                 <div class="section-2"></div>
                 <div class="languages-bar">
                     <button class="language-choice btn btn-outline-light" href="#">Python</button>
@@ -270,20 +289,21 @@
                 </div>
             </div>
         </div>
-        <script> document.onscroll = function () {
-                myFunction()
-            };
+        <script src="/js/AOS.js" type="text/javascript"> document.onscroll = function () {
+            myFunction()
+            AOS.init()
+        };
 
-            const navbar = document.getElementById("navbar");
-            const sticky = navbar.offsetTop;
+        const navbar = document.getElementById("navbar");
+        const sticky = navbar.offsetTop;
 
-            function myFunction() {
-                if (window.scrollY >= sticky) {
-                    navbar.classList.add("sticky")
-                } else {
-                    navbar.classList.remove("sticky");
-                }
+        function myFunction() {
+            if (window.scrollY >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
             }
+        }
         </script>
     </div>
 </div>
