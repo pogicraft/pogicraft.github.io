@@ -9,6 +9,7 @@
     <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
     <script src="node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme-lumen.css">
@@ -19,183 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,500&family=Raleway&family=Roboto&family=Titillium+Web&display=swap"
           rel="stylesheet">
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="/css/personal-touch.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-size: 1.25rem;
-            font-family: Arial, Helvetica, sans-serif;
-            font-family: 'Titillium Web', sans-serif;
-            font-family: 'Alkalami', serif;
-            font-family: 'Montserrat', sans-serif;
-            font-family: 'Open Sans', sans-serif;
-            font-family: 'Raleway', sans-serif;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        h4 {
-            font-size: 3rem;
-        }
-
-        h6 {
-            font-size: 2rem;
-        }
-
-        .header {
-            background-color: #214fb3;
-            padding: 30px;
-            text-align: center;
-        }
-
-        #navbar {
-            overflow: visible;
-        }
-
-        #navbar button {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar button:hover {
-            background-color: #ddd;
-            color: black;
-            margin-left: 20px;
-        }
-
-        #navbar a.active {
-            background-color: #04AA6D;
-            color: white;
-            z-index: 900;
-        }
-
-        .content {
-            padding: 16px;
-        }
-
-        .sticky {
-            position: fixed;
-            top: 60px;
-            width: inherit;
-            max-width: 20%;
-            transition-delay: .25s;
-        }
-
-        .card-link {
-            max-width: 90%;
-            text-align: center;
-        }
-
-        .sticky + .content {
-            padding-top: 20px;
-        }
-
-
-        .with-border {
-            border-width: 5px;
-            border-color: #000000;
-            border-style: dashed;
-        }
-
-        .nav-item {
-            display: block;
-            width: inherit;
-            min-width: fit-content;
-            max-width: 90%;
-            border-radius: 0px;
-            margin-right: 40%;
-            box-shadow: #1a1e21 10px 10px 5px;
-            background-color: #0f5132;
-            accent-color: #0c4128;
-            border-color: #0c4128;
-            padding: 25px;
-            z-index: 900;
-        }
-
-        .main-view {
-            background-color: #2c3034;
-            margin-left: 60px;
-        }
-
-        hr {
-            height: 10px;
-            background-color: #1ac398;
-            border-style: ridge;
-        }
-
-        .greeting {
-            background-color: #0c63e4;
-            border-color: #000000;
-            color: #f0f0f0;
-            border-bottom: #2d96e5;
-            border-bottom-width: 4px;
-            box-shadow: #2c3034 0px 10px 10px;
-            border-style: groove;
-            margin-left: 60px;
-        }
-
-        .btn-outline-light {
-            font-size: 2.5rem;
-            margin: 45px;
-            padding: 60px 60px 100px 60px;
-            border-radius: 30%;
-            border-width: 10px;
-            background-color: #3d008e;
-            transform: scale(80%);
-        }
-
-        .language-choice {
-
-        }
-
-        .section-title {
-            font-family: "Copperplate Gothic Bold";
-            font-weight: 700;
-            z-index: 200;
-            background-color: #69b6d4;
-            border: #1d1d1d solid 2px;
-            user-select: none;
-        }
-
-        .btn {
-            transition: transform 1s ease-in-out;
-        }
-
-        .extra-link {
-
-        }
-
-        .extra-link:hover {
-            scale: 120%;
-            transform: translateX(-20px);
-            border-width: 2px;
-            background-color: #ffe558;
-        }
-
-        .accordion-collapse {
-            transition: .25s linear;
-        }
-    </style>
-
-    <script>
-        $(function () {
-            $("#resume-section").load("resume.html");
-        });
-    </script>
-
 </head>
 
 <body class="container-fluid">
-<div class="but-actually-the-entire-main-body header">
+<div class="but-actually-the-entire-main-body header" style="overflow-x: hidden;">
     <div class="row">
         <hr/>
-        <div class="text-center navigation-sidebar col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;">
+        <div class="text-center navigation-sidebar col-lg-2 col-md-5 col-sm-6" style="background-color: #ffe558;"
+             id="secret-navigation">
             <nav id="navbar">
-                <div class="col-12 text-center" style="margin-top: 60px;">
+                <div class="col-12 text-center" style="margin-top: 160px;">
                     <button type="button" class="btn btn-primary nav-item">Welcome</button>
                     <button type="button" class="btn btn-primary nav-item">Software Development</button>
                     <button type="button" class="btn btn-primary nav-item">Resume</button>
@@ -209,41 +45,42 @@
             </nav>
         </div>
         <div class="col-lg-10 col-md-8 container" id="accordion-section">
-            <div data-aos="fade-down">
-                <h1 class="greeting" style="margin: 0; padding: 0;">Welcome</h1>
-            </div>
+            <div data-aos="fade-down"><h1 class="greeting" style="margin: 0; padding: 0;">Welcome</h1></div>
             <div class="with-border main-view" style="padding: 0 !important; margin: 0 !important;">
                 <div class="section-1"></div>
-                <div class="row" style="padding-left: 10%; background-color: #2c3034; max-width: 90%;">
-                    <div class="section-title name-heading header col-7 bg-white"
-                         style="margin-top: auto; margin-bottom: auto; border: 16px inset #1872cc;"><h6
-                            data-aos="fade-left" style="padding-right: 200px;">Greetings! My name is</h6><h4
-                            data-aos="fade-right" style="font-family: 'Raleway', sans-serif; font-weight: 900;">
+                <div class="row" style="margin: 10px; padding-left: 10%; background-color: #2c3034; max-width: 90%;">
+                    <div class="section-title name-heading header col-7"
+                         style="margin-top: auto; margin-bottom: auto; border: 16px inset #45210a; background-image: linear-gradient(#B79001, yellow 40%, #B79001, #DBB701)"
+                         data-aos="slide-left"><h6 data-aos="fade-left" style="padding-right: 200px;">Greetings! My name
+                        is</h6><h4 data-aos="fade-right"
+                                   style="font-size: 3.6rem; font-family: 'Titillium Web', sans-serif; font-weight: 900;">
                         Alexander Wayland-James</h4></div>
-                    <div class="col-3" style="margin: 0; padding: 0;" data-aos="flip-left"><img
+                    <div class="col-3" style="margin: 0; padding: 0;" data-aos="slide-down"><img
                             src="resources/profile.png" style="max-height: 400px;"></div>
                 </div>
-                <h6 class="invisible">some more random text here</h6>
-                <div data-aos="fade-in-out" data-aos-delay="25" data-aos-easing="ease-in"><p
-                        style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 40px; text-align: left;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec felis hendrerit orci porta
-                    fringilla. Fusce tincidunt magna eu diam consectetur elementum et id velit. Suspendisse congue augue
-                    elit, ac laoreet orci mattis non. Nullam rutrum sollicitudin neque, vel placerat erat lacinia sit
-                    amet. Nam in venenatis orci. Aenean vel eleifend lorem. Quisque a sem id ligula lobortis ullamcorper
-                    eget et velit. Donec elementum vitae dui nec mattis. Donec ipsum est, tempus vel rutrum elementum,
-                    fermentum sed est. Integer libero urna, rutrum at tempor viverra, scelerisque non diam.</p></div>
-                <div data-aos="fade-in-out" data-aos-delay="300" data-aos-easing="ease-in-sin"><h6
-                        style="background-color: #f0f0f0; border-width: 4px; border-style: dashed; padding-left: 12%; padding-right: 5%; text-align: center;">
+                <div data-aos="slide-left" data-aos-delay="25" data-aos-easing="ease-in" class="small-script"
+                     style="display: block; align-content: space-around; margin: 3% 3% 3% 3%; border-bottom-width: 0; border-top-width: 0;">
+                    <div class="container">
+                        <p class="small-script">Finance</p>
+                        <p class="small-script">Web Development</p>
+                        <p class="small-script">Underwriting</p>
+                        <p class="small-script">Coding</p>
+                        <p class="small-script">Analyst</p>
+                    </div>
+                </div>
+                <div data-aos="slide-left" data-aos-delay="300" data-aos-easing="ease-in-sin"><h6
+                        style="background-color: #f0f0f0; padding-left: 12%; padding-right: 5%; text-align: center;">
                     Full Time Deli Lead with <i>10 years of Customer Service experience</i>; excellent listening,
-                    problem-solving and relationship-building skills. Known for positive attitude and
-                    unwavering reliability. Works quickly in fast-paced environments, meeting production targets under
-                    pressure and deadlines.</h6></div>
+                    problem-solving and relationship-building skills. Known for positive attitude and unwavering
+                    reliability. Fast-paced environments are a natural fit where I meet production targets under
+                    constant pressure and deadlines traversing between various climates.</h6></div>
                 <div class="section-2"></div>
                 <div class="languages-bar">
                     <button class="language-choice btn btn-outline-light" href="#">Python</button>
                     <button class="language-choice btn btn-outline-light" href="#">HTML Javascript</button>
                     <button class="language-choice btn btn-outline-light" href="#">Backend DB</button>
                 </div>
+                <div class="container content" id="languages-view"></div>
                 <div id="collapsered" class="accordion" style="padding: 10%;">
                     <div class="accordion-item section-3"><h4 id="b-3" class="header section-title"
                                                               data-bs-toggle="collapse" data-bs-target="#resume-section"
@@ -283,20 +120,25 @@
             </div>
         </div>
         <script src="/js/AOS.js" type="text/javascript"></script>
-        <script> document.onscroll = function () {
-            myFunction()
-        };
+        <script>
+            $(function () {
+                $("#resume-section").load("resume.html");
+            });
+            const navbar = document.getElementById("navbar");
+            const sticky = navbar.offsetTop;
+            const sideMenu = document.getElementById("secret-navigation");
 
-        const navbar = document.getElementById("navbar");
-        const sticky = navbar.offsetTop;
+            document.onscroll = function () {
+                myFunction();
+            };
 
-        function myFunction() {
-            if (window.scrollY >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
+            function myFunction() {
+                if (window.scrollY >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
             }
-        }
         </script>
     </div>
 </div>
